@@ -1,0 +1,17 @@
+[[package]]
+name = "toml-python"
+version = "0.4.1"
+description = "TOML parser for python."
+category = "main"
+optional = false
+python-versions = "*"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.8"
+content-hash = "083e7946ce77124127343c6adc46242695afb8d02a9f833c7fdab2354989bdde"
+
+[metadata.files]
+toml-python = [
+    {file = "toml-python-0.4.1.tar.gz", hash = "sha256:08198eb8d362da0c2096e0bda561a003fd00864a54c5c311ffbcf4729ed4cf08"},
+]
