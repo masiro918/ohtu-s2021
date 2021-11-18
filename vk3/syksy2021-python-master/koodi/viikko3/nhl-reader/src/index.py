@@ -1,16 +1,40 @@
 import requests
 from player import Player
+from playerreader import PlayerReader
 
 def get_points(player):
     return player.points
 
 def main():
-    url = "https://nhlstatisticsforohtu.herokuapp.com/players"
-    response = requests.get(url).json()
+    #url = "https://nhlstatisticsforohtu.herokuapp.com/players"
+    #response = requests.get(url).json()
 
     #print("JSON-muotoinen vastaus:")
     #print(response)
+    
+    url = None
+    player_reader = PlayerReader("https://nhlstatisticsforohtu.herokuapp.com/players")
+    response = None
+    stats = None
+    
+    try:
+        response = player_reader.get_players()
+        print("1")
+        for player in response:
+            print(player)
+        stats = PlayerStats(response)
+        print("2")
+        players = stats.top_scorers_by_nationality("FIN")
+        
+    except:
+        print ("virhe haettaessa tietoja")
+        return
 
+    for player in players:
+        print(player)
+    
+    return
+    
     players = []
 
     for player_dict in response:
