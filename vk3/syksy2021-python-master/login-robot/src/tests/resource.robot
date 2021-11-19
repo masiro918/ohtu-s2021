@@ -10,3 +10,8 @@ Input Credentials
     Input  ${username}
     Input  ${password}
     Run Application
+
+Input New Command
+    [Arguments]  $arg0
+    Input  ${arg0}
+    

@@ -15,6 +15,22 @@ Login With Nonexistent Username
     Input Credentials  mikko  salasana
     Output Should Contain  Invalid username or password
 
+##Register With Valid Username And Password
+# ...
+
+##Register With Already Taken Username And Valid Password
+# ...
+
+##Register With Too Short Username And Valid Password
+# ...
+
+##Register With Valid Username And Too Short Password
+# ...
+
+##Register With Valid Username And Long Enough Password Containing Only Letters
+# ...
+
+
 *** Keywords ***
 Create User And Input Login Command
     Create User  kalle  kalle123
