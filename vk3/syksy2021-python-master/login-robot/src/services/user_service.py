@@ -39,11 +39,18 @@ class UserService:
             raise UserInputError("Username and password are required")
 
         # toteuta loput tarkastukset tänne ja nosta virhe virhetilanteissa
-        match = re.search("[a-z]", username)
-        if match == False:
-            raise UserInputError("Username is not valid!")
+        if len(username) > 8:
+            raise UserInputError("Username is too long!")
 
-        _user = self._user_repository.find_by_username(self, username)
+        
+        match = re.match("[^a-z]+$", username)
+        #print(match)
+        if match == None:
+            raise UserInputError("Username is not valid!")
+        
+            
+
+        _user = self._user_repository.find_by_username(username)
         
         if _user == None:
             return True
