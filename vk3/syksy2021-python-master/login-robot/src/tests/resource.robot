@@ -11,7 +11,11 @@ Input Credentials
     Input  ${password}
     Run Application
 
+#Input New Command
+    #[Arguments]  ${arg0}
+    #Input  ${arg0}
+
 Input New Command
-    [Arguments]  $arg0
-    Input  ${arg0}
+    Input  new
+
     
