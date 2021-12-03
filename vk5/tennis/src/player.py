@@ -1,8 +1,6 @@
 class Player:
-    self.name = None
-
     def __init__(self, name):
         self.name = name
     
-    def get_name():
+    def get_name(self):
         return self.name
