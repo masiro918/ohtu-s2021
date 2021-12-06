@@ -35,6 +35,10 @@ class Nollaus():
 class Kumoa():
     def __init__(self, sovelluslogiikka):
         self.sovelluslogiikka = sovelluslogiikka
+        
+    def suorita(self, new_value):
+        self.sovelluslogiikka.kumoa()
+        return self.sovelluslogiikka.tulos
 
 
 class Kayttoliittyma:
