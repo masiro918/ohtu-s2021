@@ -6,6 +6,7 @@ def main():
     url = "https://nhlstatisticsforohtu.herokuapp.com/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
+    
     '''
     matcher = And(
         HasAtLeast(5, "goals"),
@@ -18,7 +19,17 @@ def main():
         Not(HasAtLeast(1, "goals")),
         PlaysIn("NYR")
     )
+    
 
+    for player in stats.matches(matcher):
+        print(player)
+
+    print("#############################")
+    
+    matcher = And(
+        HasFewerThan(1, "goals"),
+        PlaysIn("NYR")
+    )
 
     for player in stats.matches(matcher):
         print(player)

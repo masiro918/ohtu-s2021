@@ -23,26 +23,25 @@ class HasAtLeast:
 
     def matches(self, player):
         player_value = getattr(player, self._attr)
-
         return player_value >= self._value
-
+'''
 class All:
-    def __init__(slef, *matchers):
+    def __init__(self, *matchers):
         self._matchers = matchers
     def matches(self, player):
         return True
-
+'''
 class Not:
     def __init__(self, value):
-        self._value = value
-    
+        self.object = value
     def matches(self, player):
-        if player == self._value:
-            print("true")
-            return False
-        else:
-            print("false ", player.goals)
+        b = self.object.matches(player)
+        #print(b)
+        if b == False:
             return True
+        if b == True:
+            return False
+
 
 class HasFewerThan:
     def __init__(self, value, attr):
@@ -52,4 +51,4 @@ class HasFewerThan:
     def matches(self, player):
         player_value = getattr(player, self._attr)
 
-        return player_value <= self._value
+        return player_value < self._value
