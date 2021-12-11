@@ -42,7 +42,17 @@ class Not:
         if b == True:
             return False
 
-
+class Or:
+    def __init__(self, *args):
+        self._args = args
+    def matches(self, player):
+        for matcher in self._args:
+            b = matcher.matches(player)
+            if b == True:
+                return True
+        
+        return False
+       
 class HasFewerThan:
     def __init__(self, value, attr):
         self._value = value
